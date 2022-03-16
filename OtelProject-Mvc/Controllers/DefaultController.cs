@@ -29,11 +29,6 @@ namespace OtelProject_Mvc.Controllers
             return View();
         }
 
-        public ActionResult Hizmetler()
-        {
-            return View();
-        }
-
         public ActionResult İletisim()
         {
             return View();
