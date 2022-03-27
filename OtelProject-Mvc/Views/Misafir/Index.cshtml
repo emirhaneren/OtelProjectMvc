@@ -1,8 +1,28 @@
-﻿
+﻿@model OtelProject_Mvc.Models.Entity.TblYeniKayit
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MisafirLayout.cshtml";
 }
 
-<h2>Index</h2>
-
+<h2>Profil Sayfası</h2>
+<br />
+@using (Html.BeginForm("MisafirBilgiGuncelle", "Misafir", FormMethod.Post))
+{
+<div class="form-group">
+    @*Id parametresini gizli bir şekilde alırız*@
+    @*<label>ID</label>*@
+    @Html.HiddenFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Bilgileri Güncelle</button>
+</div>
+}
