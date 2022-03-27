@@ -3,35 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using OtelProject_Mvc.Models.Entity;
 
 namespace OtelProject_Mvc.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Index2()
-        {
-            return View();
-        }
-
-        public ActionResult AnaSayfa()
-        {
-            return View();
-        }
+        //Database bağlantısı
+        DbOtelEntities db = new DbOtelEntities();
 
         public ActionResult Hakkimda()
         {
-            return View();
-        }
-
-        public ActionResult İletisim()
-        {
-            return View();
+            var veriler = db.TblHakkimda.ToList();
+            return View(veriler);
         }
 
         public PartialViewResult PartialFooter()

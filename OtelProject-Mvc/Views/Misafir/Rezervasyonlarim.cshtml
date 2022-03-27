@@ -1,0 +1,31 @@
+﻿@using OtelProject_Mvc.Models.Entity
+@model List<TblRezervasyon>
+
+
+@{
+    ViewBag.Title = "Rezervasyonlarim";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+
+<h2>Rezervasyonlarım</h2>
+<br/>
+<table class="table table-bordered">
+    <tr>
+        <th>Misafir Ad Soyad</th>
+        <th>Giriş Tarihi</th>
+        <th>Çıkış Tarihi</th>
+        <th>Kişi Sayısı</th>
+    </tr>
+
+    <!--tablodan veri çekme-->
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.TblMisafir.AdSoyad</td>
+        <td>@item.GirisTarih</td>
+        <td>@item.CikisTarih</td>
+        <td>@item.Kisi</td>
+    </tr>
+    }
+</table>
+

@@ -1,0 +1,21 @@
+﻿@*//Database Bağlantısı*@
+@model OtelProject_Mvc.Models.Entity.TblMesaj
+
+
+<div class="map-content-9 mt-lg-0 mt-4">
+    <form method="post">
+        <div class="twice-two">
+            <input type="text" class="form-control" name="Gönderen" placeholder="İsim Soyisim"
+                   required="">
+            <input type="email" class="form-control" name="Mail" placeholder="e-Mail"
+                   required="">
+        </div>
+        <div class="twice">
+            <input type="text" class="form-control" name="Konu" id="w3lSubject"
+                   placeholder="Konu" required="">
+        </div>
+        <textarea name="Mesaj" class="form-control" placeholder="Mesaj"
+                  required=""></textarea>
+        <button type="submit" class="btn btn-contact">Gönder</button>
+    </form>
+</div>

@@ -1,4 +1,7 @@
-﻿
+﻿@*//Db bağlantısı*@
+@using OtelProject_Mvc.Models.Entity
+@model List<TblHakkimda>
+
 @{
     ViewBag.Title = "Hakkimda";
     Layout = "~/Views/Shared/_OtelVitrin.cshtml";
@@ -8,32 +11,28 @@
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
 
-            <h2>About Us</h2>
-            <p><a href="index.html">Home</a> &nbsp; / &nbsp; About</p>
+            <h2>Hakkımızda</h2>
+            <p><a href="/AnaSayfa/Index">Ana Sayfa</a> &nbsp; / &nbsp; Hakkımızda</p>
 
         </div>
     </div>
 </section>
+
+@*//tablodan veri almak için açılan foreach*@ 
+@foreach (var x in Model)
+{
+
+
 <div class="w3l-about-us best-rooms py-5">
     <div class="container py-lg-5 py-sm-4">
         <div class="maghny-gd-1">
             <div class="row about-text">
                 <div class="col-lg-6">
-                    <h3 class="title-big">
-                        Best luxury Hotel in London since 2000. Our hotel has been present for over 20
-                        years.
-                    </h3>
+                    <h3 class="title-big">@x.Hakkimda1</h3>                      
                 </div>
                 <div class="col-lg-6">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempore sapiente, distinctio
-                        perferendis voluptas consequatur quaerat incidunt. Similique, officia! Dolorum fugiat et aliquam
-                        necessitatibus quas reiciendis, totam voluptatibus deleniti tempore doloribus dolor modi, ab
-                        facilis quam officiis ipsam doloremque.
-                    </p>
-                    <p class="mt-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus veritatis incidunt iste totam,
-                        consequuntur minus assumenda commodi sint asperiores. Voluptatibus incidunt alias.
+                        @x.Hakkimda2
                     </p>
                 </div>
             </div>
@@ -44,8 +43,8 @@
                             <img class="img-fluid" src="~/hotels-starter/assets/images/about1.jpg">
                             <figcaption class="w3set-hny">
                                 <div>
-                                    <h4>Top Restaurant <span> Hotels</span></h4>
-                                    <p>Breakfast and Dinner</p>
+                                    <h4>En Ferah Odalar</h4>
+                                    <p>Kahvaltı ve Akşam Yemeği</p>
                                 </div>
 
                             </figcaption>
@@ -58,8 +57,8 @@
                             <img class="img-fluid" src="~/hotels-starter/assets/images/about2.jpg">
                             <figcaption class="w3set-hny">
                                 <div>
-                                    <h4>Spa and Wellness <span> Hotels</span></h4>
-                                    <p>Open Daily </p>
+                                    <h4>Spa ve Sauna</h4>
+                                    <p>Her Gün Açık </p>
                                 </div>
 
                             </figcaption>
@@ -72,10 +71,9 @@
                             <img class="img-fluid" src="~/hotels-starter/assets/images/about3.jpg">
                             <figcaption class="w3set-hny">
                                 <div>
-                                    <h4>Best Luxury Rooms <span> Hotels</span></h4>
-                                    <p>Cool view </p>
+                                    <h4>Suit Odalar</h4>
+                                    <p>Harika Manzaralar </p>
                                 </div>
-
                             </figcaption>
                         </figure>
                     </div>
@@ -94,16 +92,15 @@
             </div>
             <div class="row w3-services-grids">
                 <div class="col-lg-9 w3-services-right-grid pl-lg-5 mx-auto">
-                    <h4 class="mb-md-5 mb-4">Doing the right thing, at the right time</h4>
+                    <h4 class="mb-md-5 mb-4">Doğru hizmeti doğru zamanda sizlere sunuyoruz.</h4>
                     <div class="fea-gd-vv row">
                         <div class="col-md-6">
                             <div class="float-lt feature-gd">
                                 <div class="icon"> <span class="fa fa-file-text-o" aria-hidden="true"></span></div>
                                 <div class="icon-info">
-                                    <h5>Welcome Drink</h5>
+                                    <h5>Sınırsız Bar</h5>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed eiusmod tempor
-                                        incididunt
+                                        Barımızda 7/24 ücretsiz ve sınırsız içecek hizmetimizden faydalanabilirsiniz.
                                     </p>
 
                                 </div>
@@ -113,10 +110,9 @@
                             <div class="float-mid feature-gd">
                                 <div class="icon"> <span class="fa fa-trophy" aria-hidden="true"></span></div>
                                 <div class="icon-info">
-                                    <h5>Bike Rental</h5>
+                                    <h5>Bisiklet Turu</h5>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed eiusmod tempor
-                                        incididunt
+                                        Otelimizin misafirlerimize sunduğu bir diğer hizmet tabiat parkı sporları için ücretsiz bisiklet hizmetidir.
                                     </p>
                                 </div>
                             </div>
@@ -125,10 +121,9 @@
                             <div class="float-rt feature-gd">
                                 <div class="icon"> <span class="fa fa-clone" aria-hidden="true"></span></div>
                                 <div class="icon-info">
-                                    <h5>WIFI Areas</h5>
+                                    <h5>Wifi Alanları</h5>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed eiusmod tempor
-                                        incididunt
+                                        Bütün odalarda ve bütün katlarda 100Mb hızındaki interneti ücretsiz kullanabilirsiniz.
                                     </p>
                                 </div>
                             </div>
@@ -137,10 +132,10 @@
                             <div class="float-lt feature-gd">
                                 <div class="icon"> <span class="fa fa-bullseye" aria-hidden="true"></span></div>
                                 <div class="icon-info">
-                                    <h5>Swimming Pool</h5>
+                                    <h5>Yüzme Havuzu</h5>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed eiusmod tempor
-                                        incididunt
+                                        Hem yetişkinler hem de çocuklar için sürekli olarak temzilenen hijyenik havuzumuzu
+                                        dilediğiniz zaman kullanabilirsiniz.
                                     </p>
 
                                 </div>
@@ -243,14 +238,9 @@
         <div class="container py-lg-3">
             <div class="row align-items-center">
                 <div class="col-lg-6 title">
-                    <h3 class="title-big">We have a great funfact! Relax & Enjoy your Holiday</h3>
+                    <h3 class="title-big">@x.Hakkimda3</h3>
                     <p class="mt-4">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, soluta impedit.
-                        Consequatur,
-                        quasi mollitia? Adipisci exercitationem amet dolore expedita repudiandae voluptatem impedit ipsa
-                        vero
-                        repellendus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio molestiae ex aut
-                        possimus atque explicabo nostrum recusandae ab quisquam at!
+                        @x.Hakkimda4
                     </p>
                 </div>
                 <div class="col-lg-6 main-cont-wthree-fea text-center">
@@ -363,4 +353,4 @@
     </div>
     <!-- /main-slider -->
 </section>
-
+}
