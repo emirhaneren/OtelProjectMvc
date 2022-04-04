@@ -53,5 +53,44 @@ namespace OtelProject_Mvc.Controllers
             Session.Abandon();
             return RedirectToAction("Index","AnaSayfa");  
         }
+
+        public ActionResult GelenMesajlar()
+        {
+            var misafirMail = (string)Session["Mail"];
+            var mesajlar = db.TblMesaj2.Where(x => x.Alici ==misafirMail).ToList();
+            return View(mesajlar);
+        }
+
+        public ActionResult GidenMesajlar()
+        {
+            var misafirMail = (string)Session["Mail"];
+            var mesajlar = db.TblMesaj2.Where(x => x.Gonderen == misafirMail).ToList();
+            return View(mesajlar);
+        }
+
+        public ActionResult MesajDetay(int id)
+        {
+            var mesaj = db.TblMesaj2.Where(x => x.MesajID == id).FirstOrDefault();
+            return View(mesaj);
+        }
+
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniMesaj(TblMesaj2 p)
+        {
+            var misafirMail = (string)Session["Mail"];
+            p.Gonderen = misafirMail;
+            p.Alici = "Admin";
+            p.Tarih = DateTime.Parse(DateTime.Now.ToLongTimeString());
+            db.TblMesaj2.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("GidenMesajlar", "Misafir");
+        }
+
     }
 }

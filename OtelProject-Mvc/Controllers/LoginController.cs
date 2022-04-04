@@ -36,8 +36,6 @@ namespace OtelProject_Mvc.Controllers
             {
                 return RedirectToAction("Index");
             }
-
-            return View();
         }
 
     }

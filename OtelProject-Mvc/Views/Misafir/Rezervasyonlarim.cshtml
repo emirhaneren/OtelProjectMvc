@@ -23,8 +23,8 @@
     {
     <tr>
         <td>@item.TblMisafir.AdSoyad</td>
-        <td>@item.GirisTarih</td>
-        <td>@item.CikisTarih</td>
+        <td>@(((DateTime)item.GirisTarih).ToString("dd-MMM-yyyy"))</td>
+        <td>@(((DateTime)item.CikisTarih).ToString("dd-MMM-yyyy"))</td>
         <td>@item.Kisi</td>
         <td><a href="#" class="btn btn-primary">Detaylar</a></td>
     </tr>

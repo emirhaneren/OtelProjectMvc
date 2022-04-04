@@ -12,6 +12,10 @@
         <EntityTypeShape EntityType="DbOtelModel.TblMisafir" Width="1.5" PointX="5.375" PointY="1" />
         <EntityTypeShape EntityType="DbOtelModel.TblRezervasyon" Width="1.5" PointX="7.625" PointY="1.25" />
         <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblMisafir" />
+        <EntityTypeShape EntityType="DbOtelModel.TblMesaj2" Width="1.5" PointX="10" PointY="1.25" />
+        <EntityTypeShape EntityType="DbOtelModel.TblOda" Width="1.5" PointX="5.375" PointY="6" />
+        <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblOda" />
+        <EntityTypeShape EntityType="DbOtelModel.TblEkibimiz" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
