@@ -16,6 +16,7 @@
         <EntityTypeShape EntityType="DbOtelModel.TblOda" Width="1.5" PointX="5.375" PointY="6" />
         <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblOda" />
         <EntityTypeShape EntityType="DbOtelModel.TblEkibimiz" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DbOtelModel.TblOnRezervasyon" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

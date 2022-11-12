@@ -21,13 +21,16 @@ namespace OtelProject_Mvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(TblRezervasyon p)
+        public ActionResult Index(TblOnRezervasyon p)
         {
             var misafirMail = (string)Session["Mail"];
-            var misafirid = db.TblYeniKayit.Where(x => x.Mail == misafirMail).Select(x => x.ID).FirstOrDefault();
-            p.Durum = 3006;
-            p.Misafir = misafirid;
-            db.TblRezervasyon.Add(p);
+            // var misafirid = db.TblYeniKayit.Where(x => x.Mail == misafirMail).Select(x => x.ID).FirstOrDefault();
+            //p.Durum = 3006;
+            //p.Misafir = misafirid;
+            p.Mail = misafirMail;
+            p.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+            db.TblOnRezervasyon.Add(p);
             db.SaveChanges();
             return RedirectToAction("Rezervasyonlarim", "Misafir");
         }
