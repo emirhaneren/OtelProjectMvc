@@ -14,8 +14,8 @@ namespace OtelProject_Mvc.Models.Entity
     
     public partial class TblMesaj
     {
-        public int ID { get; set; }
-        public string Gönderen { get; set; }
+        public int MesajID { get; set; }
+        public string Gonderen { get; set; }
         public string Mail { get; set; }
         public string Konu { get; set; }
         public string Mesaj { get; set; }

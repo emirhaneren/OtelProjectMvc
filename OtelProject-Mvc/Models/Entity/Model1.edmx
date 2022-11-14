@@ -37,10 +37,10 @@
         </EntityType>
         <EntityType Name="TblMesaj">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="MesajID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Gönderen" Type="nvarchar" MaxLength="50" />
+          <Property Name="MesajID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gonderen" Type="nvarchar" MaxLength="50" />
           <Property Name="Mail" Type="nvarchar" MaxLength="50" />
           <Property Name="Konu" Type="nvarchar" MaxLength="100" />
           <Property Name="Mesaj" Type="nvarchar" MaxLength="1000" />
@@ -173,7 +173,6 @@
         <EntityContainer Name="DbOtelEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
           <EntitySet Name="Tbliletisim" EntityType="DbOtelModel.Tbliletisim" />
-          <EntitySet Name="TblMesaj" EntityType="DbOtelModel.TblMesaj" />
           <EntitySet Name="TblYeniKayit" EntityType="DbOtelModel.TblYeniKayit" />
           <EntitySet Name="TblMisafir" EntityType="DbOtelModel.TblMisafir" />
           <EntitySet Name="TblRezervasyon" EntityType="DbOtelModel.TblRezervasyon" />
@@ -189,6 +188,7 @@
           </AssociationSet>
           <EntitySet Name="TblEkibimiz" EntityType="DbOtelModel.TblEkibimiz" />
           <EntitySet Name="TblOnRezervasyon" EntityType="DbOtelModel.TblOnRezervasyon" />
+          <EntitySet Name="TblMesaj" EntityType="DbOtelModel.TblMesaj" />
         </EntityContainer>
         <EntityType Name="Tbliletisim">
           <Key>
@@ -200,16 +200,6 @@
           <Property Name="Telefon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TblMesaj">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Gönderen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblYeniKayit">
           <Key>
@@ -331,6 +321,16 @@
           <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="TblMesaj">
+          <Key>
+            <PropertyRef Name="MesajID" />
+          </Key>
+          <Property Name="MesajID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -356,17 +356,6 @@
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
                 <ScalarProperty Name="Koordinat" ColumnName="Koordinat" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TblMesaj">
-            <EntityTypeMapping TypeName="DbOtelModel.TblMesaj">
-              <MappingFragment StoreEntitySet="TblMesaj">
-                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
-                <ScalarProperty Name="Konu" ColumnName="Konu" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="Gönderen" ColumnName="Gönderen" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -467,6 +456,17 @@
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMesaj">
+            <EntityTypeMapping TypeName="DbOtelModel.TblMesaj">
+              <MappingFragment StoreEntitySet="TblMesaj">
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Gonderen" ColumnName="Gonderen" />
+                <ScalarProperty Name="MesajID" ColumnName="MesajID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -27,7 +27,6 @@ namespace OtelProject_Mvc.Models.Entity
     
         public virtual DbSet<TblHakkimda> TblHakkimda { get; set; }
         public virtual DbSet<Tbliletisim> Tbliletisim { get; set; }
-        public virtual DbSet<TblMesaj> TblMesaj { get; set; }
         public virtual DbSet<TblYeniKayit> TblYeniKayit { get; set; }
         public virtual DbSet<TblMisafir> TblMisafir { get; set; }
         public virtual DbSet<TblRezervasyon> TblRezervasyon { get; set; }
@@ -35,5 +34,6 @@ namespace OtelProject_Mvc.Models.Entity
         public virtual DbSet<TblOda> TblOda { get; set; }
         public virtual DbSet<TblEkibimiz> TblEkibimiz { get; set; }
         public virtual DbSet<TblOnRezervasyon> TblOnRezervasyon { get; set; }
+        public virtual DbSet<TblMesaj> TblMesaj { get; set; }
     }
 }
